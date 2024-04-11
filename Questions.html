@@ -1,0 +1,836 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Questions</title>
+    <style>
+        /* Bootstrap theme */
+
+body {
+    font-size: 1rem;
+    line-height: 1.6;
+    --bezel-color: rgba(0, 0, 0, 0.03);
+}
+
+body.app-style-dark {
+    --bezel-color: rgba(0, 0, 0, 0.25);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.app-style-dark hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+ol,
+ul {
+    padding-left: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ol p,
+ul p {
+    margin: 0.3rem 0;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+    margin-bottom: 0;
+}
+
+ul.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin-bottom: 0.5rem;
+    margin-left: 2rem;
+}
+
+.footnote {
+    font-size: 87.5%;
+}
+
+.footnote p {
+    margin: 0;
+}
+
+blockquote {
+    margin: 0 0 1rem;
+}
+
+dfn {
+    font-style: italic;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):focus {
+    outline: 0;
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: ui-monospace, monospace;
+}
+
+pre {
+    margin: 1rem 0;
+    overflow: auto;
+}
+
+code {
+    color: #e83e8c;
+    word-break: break-word;
+}
+
+pre,
+code {
+    font-size: 87.5%;
+}
+
+pre code {
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+}
+
+a > code {
+    color: inherit;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+mark {
+    padding: 2px 4px;
+    background-color: #fcf8e3;
+    border-radius: 4px;
+}
+
+.app-style-dark mark {
+    background-color: rgba(255, 255, 0, 0.8);
+    color: #000;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+    background-color: transparent;
+    --border-color: rgba(0, 0, 0, 0.09);
+    --hover-color: rgba(0, 0, 0, 0.03);
+}
+
+.app-style-dark table {
+    --border-color: rgba(255, 255, 255, 0.2);
+    --hover-color: rgba(255, 255, 255, 0.03);
+}
+
+table th,
+table td {
+    padding: 0.5rem;
+    vertical-align: top;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid var(--border-color);
+}
+
+table tbody + tbody {
+    border-top: 2px solid var(--border-color);
+}
+
+table tbody tr:hover {
+    background-color: var(--hover-color);
+}
+
+.toc {
+    max-width: min(50%, 300px);
+    float: right;
+    margin: 0 0 20px 20px;
+    padding: 10px 0;
+    background-color: var(--bezel-color);
+    border-radius: 8px;
+}
+
+@media (max-width: 350px) {
+    .toc {
+        float: none;
+        margin: 1.5rem 0;
+        max-width: none;
+    }
+
+    .toc:first-child {
+        margin: 0 0 1.5rem;
+    }
+}
+
+.toc > ul {
+    margin: 0;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+}
+
+.toc > ul > li:not(:last-child) {
+    padding-bottom: 5px;
+}
+
+.toc a {
+    display: block;
+    padding: 1px 15px 1px 13px;
+    border-left: 2px solid transparent;
+    font-weight: 600;
+    color: inherit;
+    opacity: 0.75;
+}
+
+.toc a:hover,
+.toc a:focus {
+    text-decoration: none;
+    opacity: 1;
+    border-left: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.toc ul ul a {
+    font-size: 90%;
+    font-weight: 500;
+    padding-left: 25px;
+    opacity: 0.85;
+}
+
+.toc ul ul ul a {
+    padding-left: 40px;
+    font-weight: 400;
+}
+
+.toc ul ul ul ul a {
+    padding-left: 55px;
+}
+
+.toc ul ul ul ul ul a {
+    padding-left: 70px;
+}
+
+.toc ul ul ul ul ul ul a {
+    padding-left: 85px;
+}
+
+.codehilite pre {
+    padding: 1rem 1.5rem;
+    background-color: var(--bezel-color);
+}
+
+blockquote {
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+    padding-left: 10px;
+}
+
+.app-style-dark blockquote {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+        :root { font-size: 13.0px }
+:root { --accent-color: #0a60ff }
+
+body {
+    font-family: -apple-system, system-ui, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 16px 20px;
+    color: #d9d9d9;
+    print-color-adjust: exact;
+}
+
+
+
+
+
+html, body { background-color: #121212 }
+
+a { color: #0a60ff }
+
+pre, code, kbd, samp {
+    font-family: ui-monospace, monospace;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+/* prevent horizontal overflow */
+
+body { overflow-wrap: break-word }
+ul, ol { word-break: break-word }
+img { max-width: 100% !important }
+code { white-space: normal !important }
+pre { white-space: pre-wrap !important }
+
+/* supporting pre/code structure for code blocks */
+
+pre code {
+    white-space: pre-wrap !important;
+    display: contents !important;
+}
+
+/* supporting code block line numbers */
+
+[data-linenos]:before {
+    content: attr(data-linenos);
+    opacity: 0.4;
+}
+
+/* overscroll */
+
+body > *:nth-last-child(1 of :not(.sticky-toc)) {
+    margin-bottom: 0;
+}
+
+
+
+
+
+.mermaid text:not(.slice):not(.error-text),
+.mermaid tspan {
+    font-family: -apple-system, Helvetica, sans-serif !important;
+    font-size: min(1rem, 18px) !important;
+}
+
+.mermaid text.titleText,
+.mermaid text.pieTitleText {
+    font-size: 1.5rem !important;
+}
+
+.mermaid .messageText {
+    font-weight: 200 !important;
+    letter-spacing: 0.8px !important;
+}
+
+.mermaid .edgeLabel .label rect,
+.mermaid .relationshipLabelBox {
+    opacity: 1.0 !important;
+    fill: #1e1e1e !important;
+}
+
+.mermaid .attributeBoxOdd {
+    fill: #1e1e1e !important;
+}
+
+.mermaid .attributeBoxEven {
+    fill: #292929 !important;
+}
+
+.codehilite .kc { color: #fc5fa2 }
+.codehilite .no { color: #d1a8ff }
+.codehilite .sa { color: #fb6a5d }
+.codehilite .sh { color: #91a1b0 }
+.codehilite .x { color: #d9d9d9 }
+.codehilite .mo { color: #d0bf6a }
+.codehilite .ne { color: #fb6a5d }
+.codehilite .nc { color: #9df1dd }
+.codehilite .s2 { color: #fb6a5d }
+.codehilite .mh { color: #d0bf6a }
+.codehilite .w { color: #d9d9d9 }
+.codehilite .sc { color: #d0bf6a }
+.codehilite .vm { color: #a266e7 }
+.codehilite .nd { color: #fc5fa2 }
+.codehilite .cp { color: #fd8e3e }
+.codehilite .dl { color: #fb6a5d }
+.codehilite .gt { color: #fb6a5d }
+.codehilite .nx { color: #d9d9d9 }
+.codehilite .kd { color: #fc5fa2 }
+.codehilite .se { color: #d0bf6a }
+.codehilite .mf { color: #d0bf6a }
+.codehilite .s { color: #fb6a5d }
+.codehilite .cpf { color: #fb6a5d }
+.codehilite .s1 { color: #fb6a5d }
+.codehilite .na { color: #bf8455 }
+.codehilite .ges { color: #d0bf6a }
+.codehilite .sb { color: #d0bf6a }
+.codehilite .gh { color: #ab0b91 }
+.codehilite .cs { color: #91a1b0 }
+.codehilite .cm { color: #6b7985 }
+.codehilite .vc { color: #42a0c0 }
+.codehilite .nl { color: #a266e7 }
+.codehilite .nb { color: #fc5fa2 }
+.codehilite .kt { color: #fc5fa2 }
+.codehilite .cd { color: #5dd7ff }
+.codehilite .nt { color: #fc5fa2 }
+.codehilite .si { color: #d9d9d9 }
+.codehilite .nv { color: #d9d9d9 }
+.codehilite .l { color: #d0bf6a }
+.codehilite .n { color: #d9d9d9 }
+.codehilite .bp { color: #d1a8ff }
+.codehilite .c { color: #6b7985 }
+.codehilite .ch { color: #91a1b0 }
+.codehilite .vi { color: #42a0c0 }
+.codehilite .err { color: #d9d9d9 }
+.codehilite .g { color: #d9d9d9 }
+.codehilite .kp { color: #fc5fa2 }
+.codehilite .mi { color: #d0bf6a }
+.codehilite .p { color: #d9d9d9 }
+.codehilite .gd { color: #6b7985 }
+.codehilite .il { color: #d0bf6a }
+.codehilite .gu { color: #ab0b91 }
+.codehilite .nf { color: #66b6a4 }
+.codehilite .sr { color: #fb6a5d }
+.codehilite .ga { color: #ffffff }
+.codehilite .ge { color: #fb6a5d }
+.codehilite .kr { color: #fc5fa2 }
+.codehilite .vg { color: #a266e7 }
+.codehilite .sx { color: #fb6a5d }
+.codehilite .gs { color: #d0bf6a }
+.codehilite .esc { color: #d9d9d9 }
+.codehilite .kn { color: #fc5fa2 }
+.codehilite .ss { color: #fb6a5d }
+.codehilite .gr { color: #fb6a5d }
+.codehilite .mb { color: #d0bf6a }
+.codehilite .pm { color: #d9d9d9 }
+.codehilite .go { color: #d1d1d1 }
+.codehilite .ow { color: #fc5fa2 }
+.codehilite .o { color: #d9d9d9 }
+.codehilite .ld { color: #d0bf6a }
+.codehilite .gi { color: #42b545 }
+.codehilite .k { color: #fc5fa2 }
+.codehilite .ni { color: #d0bf6a }
+.codehilite .fm { color: #a266e7 }
+.codehilite .py { color: #42a0c0 }
+.codehilite .m { color: #d0bf6a }
+.codehilite .c1 { color: #6b7985 }
+.codehilite .gp { color: #42b545 }
+.codehilite .nn { color: #d9d9d9 }
+.codehilite .sd { color: #91a1b0 }
+.codehilite .hll {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.075);
+}
+
+.codehilite {
+    position: relative;
+    overflow-x: hidden;
+    margin: 1rem 0;
+}
+
+.codehilite pre {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.codehilite:hover .copy-button {
+    opacity: 1;
+}
+
+.codehilite .copy-button {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: rgba(32, 32, 32, 1.000);
+    color: rgba(255, 255, 255, 0.45);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 5px 9px 6px 9px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease-in;
+}
+
+.sticky-toc {
+    position: fixed;
+    right: 20px;
+    z-index: 1;
+    max-width: min(60%, 340px);
+    display: none;
+}
+
+@media (max-width: 350px) {
+    .sticky-toc {
+        max-width: calc(100% - 20px);
+    }
+}
+
+.sticky-toc .toc {
+    display: none;
+    max-width: none;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    float: none;
+    margin: 0;
+}
+
+.hot-corner {
+    position: fixed;
+    right: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 1;
+}
+
+.app-layout-unified .sticky-toc,
+.app-layout-unified .hot-corner {
+    top: 0;
+}
+
+.app-layout-expanded .sticky-toc,
+.app-layout-expanded .hot-corner {
+    top: 20px;
+}
+
+.hot-corner svg {
+    fill: rgba(217, 217, 217, 1.000);
+}
+
+.hot-corner svg,
+.hot-corner {
+    width: 16px;
+    height: 16px;
+}
+
+.sticky-toc .toc,
+.hot-corner {
+    background: rgba(32, 32, 32, 0.850);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: saturate(200%) blur(30px);
+    backdrop-filter: saturate(200%) blur(30px);
+}
+
+.sticky-toc:hover .hot-corner {
+    opacity: 0;
+}
+
+.hot-corner:hover + .toc,
+.toc:hover {
+    display: block;
+}
+    </style>
+    <!-- MathJax -->
+<script>
+    window.MathJax = {
+      startup: {
+        typeset: true
+      },
+      options: {
+        enableMenu: false,
+        // Arithmatex
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process',
+        renderActions: {
+          find: [10, function (doc) {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              const sibling = node.previousElementSibling;
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+              if (sibling && sibling.matches('.MathJax_Preview')) {
+                sibling.parentNode.removeChild(sibling);
+              }
+            }
+          }, '']
+        }
+      }
+    };
+</script>
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js"></script>
+    
+</head>
+<body class="app-style-dark app-theme-Mojave-Dark app-lang-en-IN">
+    <h1 id="question-1">Question 1:</h1>
+<p>Find the maxmimun of 3 numbers without using if else or switch. </p>
+<p>1&lt;=numbers&lt;=100000 , also all numbers may not be distinct</p>
+<p>Note:  if all numbers are same display all are equal</p>
+<p>Sample Input : <br />
+5<br />
+6<br />
+7 <br />
+Output: <br />
+7</p>
+<h1 id="question-2">Question 2:</h1>
+<p>Write a program that accepts 'n' integers from the user and prints the second highest number among them.</p>
+<p>Input Format</p>
+<p>1st line will take an integer input 'n' then 'n' integer numbers</p>
+<p>Constraints</p>
+<p>1&lt;=numbers&lt;=100000</p>
+<p>Output Format</p>
+<p>second biggest number</p>
+<p>Sample Input 0</p>
+<p>10<br />
+1 <br />
+2 <br />
+3 <br />
+4 <br />
+5 <br />
+6 <br />
+7 <br />
+8 <br />
+9 <br />
+10<br />
+Sample Output 0</p>
+<p>9<br />
+Sample Input 1</p>
+<p>5<br />
+9 <br />
+9 <br />
+7 <br />
+6 <br />
+5<br />
+Sample Output 1</p>
+<p>7<br />
+Sample Input 2</p>
+<p>5<br />
+5 <br />
+5 <br />
+5 <br />
+5 <br />
+5<br />
+Sample Output 2</p>
+<p>No second biggest number<br />
+Explanation 2</p>
+<p>If all numbers are same like in this example then print No Second biggest number.</p>
+<h1 id="question-3">Question 3:</h1>
+<p>Take a number and return all the even digits of the number.</p>
+<p>Constraints:<br />
+0 &lt;= number &lt;= 10000</p>
+<p>Input:<br />
+A single integer is provided as input.<br />
+Output:<br />
+Return a list of even digits of the number, each digit in a new line.Return -1 in case there are no even digits</p>
+<p>Example:<br />
+Input:<br />
+1204<br />
+Output:<br />
+2<br />
+0<br />
+4</p>
+<p>Restriction: You cannot convert the number to string and solve it.</p>
+<h1 id="question-4">Question 4:</h1>
+<p>For number from 1 to 100 if number is divisible by 3 print 'Hello' if divisible by 5 print 'World', if divisible by 15 print 'HelloWorld' else print the number itself</p>
+<p>Input:<br />
+No input is required<br />
+Output:<br />
+100 lines of output, each line containing the string HelloWorld or Hello or World or the number itself according to the above rules.</p>
+<p>Restriction: You cannot use %(modulus) in this problem.</p>
+<h1 id="question-5">Question 5:</h1>
+<p>Take an integer input and print 'YES' if the integer is a mars number, else print 'NO'.</p>
+<p>Hint:<br />
+A mars number is a number if the sum of its digits can be reduced to single digit in even number of steps.<br />
+Example:<br />
+199 =&gt; 19 =&gt; 10 =&gt; 1<br />
+Number of steps = 3<br />
+Hence the number is not a mars number.</p>
+<p>Input:<br />
+A single integer input<br />
+Output:<br />
+Print 'YES' if the number is a mars number, else print 'NO'</p>
+<p>Example:<br />
+Input:<br />
+199<br />
+Output:<br />
+NO</p>
+<p>Restriction: Make sure to follow the steps as described in the problem.</p>
+<h1 id="question-6">Question 6:</h1>
+<p><em>*</em><img alt="Screenshot 2024-04-12 at 3.47.13 AM" src="./attachment_A62CE2EB-4BB4-4CEA-90DC-84A724B71609.png" /></p>
+<p>Design this layout </p>
+<p>Restrictions:  Dont use any inbuilt string functions to solve it.</p>
+<h1 id="question-7">Question 7</h1>
+<p><strong>Title:</strong> Minimum Character Changes to Make a String Palindrome</p>
+<p><strong>Description:</strong><br />
+Given a string <code>s</code>, determine the minimum number of character substitutions needed to convert the string into a palindrome. A palindrome is a string that reads the same forward and backward.</p>
+<p><strong>Input:</strong><br />
+A single string <code>s</code> which consists of lowercase English letters.</p>
+<p><strong>Output:</strong><br />
+Return an integer representing the minimum number of character changes required to make the string a palindrome.</p>
+<p><strong>Constraints:</strong><br />
+- <span class="arithmatex"><script type="math/tex">1 \leq \text{len}(s) \leq 1000</script></span></p>
+<p><strong>Function Signature:</strong><br />
+<code>def min_changes_to_palindrome(s: str) -&gt; int:</code></p>
+<h3 id="example">Example</h3>
+<p><strong>Input:</strong><br />
+<code>s = "radar"</code></p>
+<p><strong>Output:</strong><br />
+<code>0</code></p>
+<p><strong>Explanation:</strong><br />
+The string "radar" is already a palindrome, so no changes are needed.</p>
+<h3 id="additional-test-case">Additional Test Case</h3>
+<p><strong>Input:</strong><br />
+<code>s = "abca"</code></p>
+<p><strong>Output:</strong><br />
+<code>1</code></p>
+<p><strong>Explanation:</strong><br />
+Changing the last character 'a' to 'b' would make the string "abba", which is a palindrome. Hence, only one change is necessary.</p>
+<h1 id="question-8">Question 8:</h1>
+<h3 id="problem-statement">Problem Statement</h3>
+<p><strong>Title:</strong> Software Version Comparison</p>
+<p><strong>Description:</strong><br />
+Given two software version strings, <code>v1</code> and <code>v2</code>, determine their relationship. The versions are compared based on the numerical value of their segments, which are separated by periods. You need to decide whether <code>v1</code> is the same as, an upgrade from, or a downgrade to <code>v2</code>.</p>
+<p>Note: Dont use split(), if needed code for it.</p>
+<p><strong>Input:</strong><br />
+- <code>v1</code> (string): A version number consisting of numerical segments separated by periods.<br />
+- <code>v2</code> (string): Another version number with the same format as <code>v1</code>.</p>
+<p><strong>Output:</strong><br />
+- Return a string indicating the relationship:<br />
+  - <code>"same"</code> if both versions are the same.<br />
+  - <code>"upgraded"</code> if <code>v1</code> is an upgrade from <code>v2</code>.<br />
+  - <code>"downgraded"</code> if <code>v1</code> is a downgrade to <code>v2</code>.</p>
+<p><strong>Constraints:</strong><br />
+- The version strings will consist of numbers and period separators only.<br />
+- Each segment of the version number can be considered to fit within a standard integer value.</p>
+<p><strong>Function Signature:</strong><br />
+<code>def compare_versions(v1: str, v2: str) -&gt; str:</code></p>
+<h3 id="example_1">Example</h3>
+<p><strong>Input:</strong><br />
+<code>v1 = "12.34.56"</code><br />
+<code>v2 = "12.34.57"</code></p>
+<p><strong>Output:</strong><br />
+<code>"downgraded"</code></p>
+<p><strong>Explanation:</strong><br />
+Here, the third segment of <code>v2</code> ("57") is higher than that of <code>v1</code> ("56"), indicating that <code>v1</code> is a downgrade relative to <code>v2</code>.</p>
+<h3 id="additional-test-case_1">Additional Test Case</h3>
+<p><strong>Input:</strong><br />
+<code>v1 = "12.34.56"</code><br />
+<code>v2 = "12.000034.56"</code></p>
+<p><strong>Output:</strong><br />
+<code>"same"</code></p>
+<p><strong>Explanation:</strong><br />
+Ignoring leading zeros, both version strings are equivalent as "12.34.56". Therefore, there is no upgrade or downgrade, and they are the same.</p>
+<p>This problem involves parsing the version strings into comparable units, handling edge cases like leading zeros and different segment counts gracefully.</p>
+<h1 id="question-9">Question 9:</h1>
+<p>Given a string S find the length of the longest substring of S with all distinct characters.</p>
+<p>Input Format<br />
+First line of input contains S</p>
+<p>Output Format<br />
+Output a single integer, the length of the longest substring of S with all distinct characters.</p>
+<p>Example 1<br />
+Input</p>
+<p>aab</p>
+<p>Output</p>
+<p>2</p>
+<p>Example 2<br />
+Input</p>
+<p>icpcprog</p>
+<p>Output</p>
+<p>5</p>
+<p>Explanation:</p>
+<p>Example 1: Longest substring with all distinct characters is ab.</p>
+<p>Constraints:</p>
+<p>1 &lt;= |S| &lt;= 100000</p>
+</body>
+</html>
